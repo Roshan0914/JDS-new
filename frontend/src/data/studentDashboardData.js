@@ -2,11 +2,13 @@
 // TODO: Replace with backend API data
 
 import {
+  FaBell,
   FaCalendarDay,
   FaCar,
   FaChartLine,
   FaCircleCheck,
   FaClipboardCheck,
+  FaFileSignature,
   FaGaugeHigh,
   FaMoneyBillWave,
   FaUserGraduate,
@@ -19,7 +21,12 @@ export const studentPanel = {
   panelTitle: 'Student Panel',
   user: { name: 'Student', role: 'Student', icon: FaUserGraduate, avatar: null },
   // The remaining student menu items will be added here: { label, to, icon }
-  menuItems: [{ label: 'Dashboard', to: '/student-dashboard', icon: FaGaugeHigh, end: true }],
+  // `end` keeps "Dashboard" from staying active on sub-pages
+  menuItems: [
+    { label: 'Dashboard', to: '/student-dashboard', icon: FaGaugeHigh, end: true },
+    { label: 'Exams', to: '/student-dashboard/exams', icon: FaFileSignature },
+    { label: 'Notifications', to: '/student-dashboard/notifications', icon: FaBell },
+  ],
 }
 
 // TODO: Replace dashboard statistics with backend data
